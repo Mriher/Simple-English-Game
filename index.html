@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Language Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div id="player"></div>
+
+<body>
+
+    <audio id="background-music" loop preload="auto">
+        <source src="background.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="sound-toggle" class="sound-btn">
+        <span id="sound-icon">🔊</span>
+    </button>
+
+    <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
+
+    <div class="game-container">
+        <!-- Home Page -->
+        <div id="home-page">
+            <h1>English Language Game</h1>
+            <button class="start-btn" id="startBtn">Start Game</button>
+        </div>
+        
+        <!-- Mode Selection -->
+        <div id="mode-selection" style="display: none;">
+            <h3>Select Game Mode</h3>
+            <div class="mode-buttons">
+                <button class="mode-btn" onclick="selectMode('articles')">Articles</button>
+                <button class="mode-btn" onclick="selectMode('prepositions')">Prepositions</button>
+                <button class="mode-btn" onclick="selectMode('pronouns')">Pronouns</button>
+                <button class="mode-btn" onclick="selectMode('pastTenses')">Past Tenses</button>
+                <button class="mode-btn" onclick="selectMode('irregularVerbs')">Irregular Verbs</button>
+                <button class="mode-btn" onclick="selectMode('pluralSingular')">Plural & Singular</button>
+                <button class="mode-btn" onclick="selectMode('synonyms')">Synonyms</button>
+                <button class="mode-btn" onclick="selectMode('antonyms')">Antonyms</button>
+                <button class="mode-btn" onclick="selectMode('conditionals')">Conditionals</button>
+                <button class="mode-btn" onclick="selectMode('phrasalVerbs')">Phrasal Verbs</button>
+            </div>
+        </div>
+        <!-- Question Page -->
+        <div id="question-page" class="question-page" style="display: none;">
+            <p id="question-text">What is the past tense of 'go'?</p>
+            <div id="answers" class="answers">
+                <button class="answer-btn" onclick="checkAnswer('a')">a) Gone</button>
+                <button class="answer-btn" onclick="checkAnswer('b')">b) Went</button>
+                <button class="answer-btn" onclick="checkAnswer('c')">c) Going</button>
+                <button class="answer-btn" onclick="checkAnswer('d')">d) Goes</button>
+            </div>
+        </div>
+
+        <!-- Feedback Page -->
+        <div id="feedback-page" class="feedback-page" style="display: none;">
+            <p id="feedback-text">Correct! Well done.</p>
+            <button id="nextBtn" class="next-btn" onclick="nextQuestion()">Next Question</button>
+        </div>
+
+        <!-- Final Score Page -->
+<div id="score-page" class="score-page" style="display: none;">
+    <p id="final-score">Your Score: 0</p>
+    <p id="final-message"></p> <!-- Pesan motivasi -->
+    <button class="start-btn" onclick="restartGame()">Restart Game</button>
+</div>
+
+
+    <script src="game.js"></script>
+    <audio id="correct-sound" src="correct.mp3"></audio>
+<audio id="wrong-sound" src="wrong.mp3"></audio>
+
+</body>
+</html>

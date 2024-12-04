@@ -1,0 +1,227 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game-container {
+    text-align: center;
+    border: 3px solid #4682b4;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Title and Buttons */
+h1 {
+    color: #4682b4;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.start-btn, .mode-btn, .answer-btn, .next-btn {
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-btn:hover, .mode-btn:hover, .answer-btn:hover, .next-btn:hover {
+    background-color: #4682b4;
+}
+
+.sound-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sound-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+/* Question and Answer Section */
+.question-page {
+    font-size: 20px;
+}
+
+.answers {
+    margin-top: 20px;
+}
+
+.answer-btn {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+}
+
+/* Feedback Page */
+.feedback-page {
+    margin-top: 20px;
+}
+
+.feedback-page p {
+    font-size: 18px;
+}
+
+/* Final Score Page */
+.score-page {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Mode Selection */
+#mode-selection {
+    text-align: center;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.mode-buttons {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+.mode-btn {
+    padding: 15px 25px;
+    font-size: 18px;
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mode-btn:hover {
+    background-color: #4682b4;
+    transform: scale(1.05);
+}
+
+#mode-selection h3 {
+    text-align: center;
+    font-size: 28px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#feedback-text, #question-text {
+    animation: fadeIn 1s ease-in;
+}
+
+.correct-answer {
+    animation: correctAnimation 1s ease-in;
+}
+
+.wrong-answer {
+    animation: wrongAnimation 1s ease-in;
+}
+
+@keyframes correctAnimation {
+    from {
+        color: blue;
+    }
+    to {
+        color: blue;
+    }
+}
+
+@keyframes wrongAnimation {
+    from {
+        color: red;
+    }
+    to {
+        color: darkred;
+    }
+}
+/* Animasi untuk jawaban benar */
+.correct-answer {
+    color: green;
+    animation: fadeIn 1s;
+}
+
+/* Animasi untuk jawaban salah */
+.wrong-answer {
+    color: red;
+    animation: shake 0.5s;
+}
+
+/* Keyframes animasi */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25%, 75% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+}
+
+.sound-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sound-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+.volume-slider {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 150px;
+    z-index: 1000;
+}
